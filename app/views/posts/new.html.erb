@@ -1,7 +1,7 @@
 <h1>Construyendo algo</h1>
 
 
-<%= form_with scope: :posts, local: true do |form| %>
+<%= form_for :post, url: posts_path do |form| %>
   <p>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
