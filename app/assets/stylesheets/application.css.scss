@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+ @import 'normalize';
+
+html, body{
+  font-family: 'PT Sans Narrow', sans-serif;
+}
