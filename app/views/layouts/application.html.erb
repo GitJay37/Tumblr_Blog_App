@@ -15,37 +15,49 @@
   <body>
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand"> Tumblr </a>
+        <a class="navbar-brand" href="/"> Tumblr </a>
 
         <ul class="navbar-nav mr-auto">
           <li>
-            <a class="mr-3" href="#"> <%= link_to 'Post', root_path %> </a> 
+            <a class="mr-3; text-decoration-none" href="#"> <%= link_to 'Post', root_path %> </a> 
           </li>
           <li>
-            <a class="ml-3" href="#">About</a>
+            <a class="ml-3 text-decoration-none" href="#">About</a>
           </li>
           <li>
-            <a class="ml-3" href="#">User Login</a>
+            <a class="ml-3 text-decoration-none" href="#">User Login</a>
           </li>
         </ul>
 
         <ul class="navbar-nav">
-          <a class="navbar-brand"> Post feed </a>
-          <div>
-            <button class="btn btn-primary btn-sm"> <%= link_to 'Make Post', new_post_path %> </button>
-            <button class="btn btn-primary btn-sm"> Logout </button>
-          </div>
+          <a class="navbar-brand ml-3"> Post feed </a>
+            <li>
+              <button class="btn btn-info btn-sm" href="#">
+                <%= link_to 'Make post', new_post_path %> 
+              </button>
+            </li>
+
+            <li>
+              <button class="btn btn-info btn-sm ml-3"> Logout </button>
+            </li>
         </ul>
 
 
       <nav>
       <!-- <%= image_tag 'ok.png' %> -->   
     </header>
+      
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-sm-12 col-sm-6 col-sm-4 col-sm-offset-3">  
+            <% flash.each do |name, msg| %>
+              <%= content_tag(:div, msg, class: 'alert') %>
+            <% end %>
 
-      <% flash.each do |name, msg| %>
-        <%= content_tag(:div, msg, class: 'alert') %>
-      <% end %>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
 
-      <%= yield %>
   </body>
 </html>
