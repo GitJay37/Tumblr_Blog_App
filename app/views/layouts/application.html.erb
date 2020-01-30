@@ -18,19 +18,25 @@
         <a class="navbar-brand" href="/"> Tumblr </a>
 
         <ul class="navbar-nav mr-auto">
-          <li>
-            <a class="mr-3; text-decoration-none" href="#"> <%= link_to 'Post', root_path %> </a> 
-          </li>
-          <li>
-            <a class="ml-3 text-decoration-none" href="#">About</a>
-          </li>
-          <li>
-            <a class="ml-3 text-decoration-none" href="#">User Login</a>
-          </li>
-        </ul>
 
-        <ul class="navbar-nav">
-          <a class="navbar-brand ml-3"> Post feed </a>
+          <li>
+            <a class="mr-3"> <%= link_to 'Make post', new_post_path %> </a>
+          </li>
+          
+          <li>
+            <a class="mr-3"> <%= link_to 'Post', root_path %> </a> 
+          </li>
+         
+        </ul>
+        
+        <div class="float-right">
+          <a class="navbar-brand ml-3"> Log in </a>
+          <a class="navbar-brand ml-3" href="#" role="button">Logout</a>
+        </div>
+        
+        <!-- 
+          <ul class="navbar-nav">
+            <a class="navbar-brand ml-3"> Post feed </a>
             <li>
               <button class="btn btn-info btn-sm" href="#">
                 <%= link_to 'Make post', new_post_path %> 
@@ -41,10 +47,11 @@
               <button class="btn btn-info btn-sm ml-3"> Logout </button>
             </li>
         </ul>
+        -->
 
 
       <nav>
-      <!-- <%= image_tag 'ok.png' %> -->   
+
     </header>
       
       <div class="container mt-5">
