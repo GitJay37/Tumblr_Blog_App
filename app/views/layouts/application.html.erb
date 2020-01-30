@@ -44,10 +44,10 @@
         <div class="row">
           <div class="col-sm-12 col-sm-6 col-sm-4 col-sm-offset-3"> 
             <% if current_page?(root_path)%>
-              <h1> Post feed </h1>
+              <div> <h1> Post feed </h1> </div>
             <% elsif  current_page?(about_path)%>
-              <h1> My site </h1>
-              <%= link_to 'Regresar', root_path%>
+              <div class="float-left ml-3"> <h2> My site </h2> </div><br> <br>
+              <div class="float-left ml-3"> <%= link_to 'Regresar', root_path%></div>
             <% else %>
               <%= link_to 'Regresar', root_path%>
             <% end %>
@@ -55,7 +55,7 @@
         </div>
       </div>
       
-      <div class="container mt-5">
+      <div class="container mt-3">
         <div class="row">
           <div class="col-sm-12 col-sm-6 col-sm-4 col-sm-offset-3">  
             <% flash.each do |name, msg| %>
