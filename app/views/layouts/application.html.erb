@@ -33,10 +33,19 @@
          
         </ul>
         
-        <div class="float-right">
-          <a class="navbar-brand ml-3"> Log in </a>
-          <a class="navbar-brand ml-3" href="#" role="button">Logout</a>
-        </div>
+        <% if !user_signed_in?%>
+          <div class="float-right">
+            <a class="navbar-brand ml-3"> <%= link_to 'User Login', new_user_session_path%> </a>
+          </div>
+        <% end %>
+ 
+        <% if user_signed_in?%>
+          <div class="float-right">
+            <a class="navbar-brand ml-3">
+              <%= link_to 'Sign Out', destroy_user_session_path, method: :delete%>
+            </a>
+          </div>
+        <% end %>
       <nav>
     </header>
     
