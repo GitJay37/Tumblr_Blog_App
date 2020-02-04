@@ -2,12 +2,12 @@
     <div>
         <p> <strong> <%= comment.name %> </strong> </p>
         <p> <%= comment.body %> </p>
-        <p> <%= time_ago_in_words(comment.created_at) %> ago </p>
+        <p> <%= time_ago_in_words(comment.created_at) %> </p>
     </div>
 
     <% if user_signed_in?%>
-        <p>
+        <button class="btn btn-outline-danger btn-sm">
             <%= link_to 'Eliminar', [comment.post, comment], method: :delete, data: { confirm: 'Estás seguro?' } %>
-        </p>
+        </button>
     <% end %>
 </div>
