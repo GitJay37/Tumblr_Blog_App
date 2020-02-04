@@ -20,15 +20,15 @@
         <ul class="navbar-nav mr-auto">
 
           <li>
-            <a class="mr-3"> <%= link_to 'Make post', new_post_path %> </a>
+            <a class="mr-3"> <%= link_to 'Realizar enunciado', new_post_path %> </a>
           </li>
           
           <li>
-            <a class="mr-3"> <%= link_to 'Post', root_path %> </a> 
+            <a class="mr-3"> <%= link_to 'Publicaciones', root_path %> </a> 
           </li>
 
           <li>
-            <a class="mr-3"> <%= link_to 'About', about_path %> </a> 
+            <a class="mr-3"> <%= link_to 'Acerca de mí', about_path %> </a> 
           </li>
          
         </ul>
@@ -42,7 +42,7 @@
         <% if user_signed_in?%>
           <div class="float-right">
             <a class="navbar-brand ml-3">
-              <%= link_to 'Sign Out', destroy_user_session_path, method: :delete%>
+              <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete%>
             </a>
           </div>
         <% end %>
@@ -53,7 +53,8 @@
         <div class="row">
           <div class="col-sm-12 col-sm-6 col-sm-4 col-sm-offset-3"> 
             <% if current_page?(root_path)%>
-              <div> <h1> Post feed </h1> </div>
+              <div> <h1> Tablero de enunciados </h1> </div>
+              <hr>
             <% elsif  current_page?(about_path)%>
               <div class="float-left ml-3"> <h2> My site </h2> </div><br> <br>
               <div class="float-left ml-3"> <%= link_to 'Regresar', root_path%></div>
@@ -75,6 +76,5 @@
           </div>
         </div>
       </div>
-
   </body>
 </html>
